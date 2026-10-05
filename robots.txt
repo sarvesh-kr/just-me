@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sarvesh-kr.github.io/just-me/sitemap.xml
