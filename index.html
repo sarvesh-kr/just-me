@@ -4,165 +4,754 @@ layout: null
 {%- include site-url.html -%}
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'sha256-Q4SthBKKA8csJ7X0a7NbLItDb8j78i1NExan2lrsKkc='; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f7fb">
-  <meta name="color-scheme" content="light dark">
-  <title>Sarvesh — Software Developer, Automation & AI</title>
-  <meta name="description" content="Sarvesh builds software, automates business workflows, connects enterprise platforms, and integrates practical AI using Node.js, Python, and APIs.">
-  <meta name="author" content="Sarvesh">
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="{{ site_root | escape }}">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="Sarvesh">
-  <meta property="og:type" content="profile">
-  <meta property="profile:first_name" content="Sarvesh">
-  <meta property="og:title" content="Sarvesh — Software Developer, Automation & AI">
-  <meta property="og:description" content="Sarvesh builds software, automates business workflows, connects enterprise platforms, and integrates practical AI using Node.js, Python, and APIs.">
-  <meta property="og:url" content="{{ site_root | escape }}">
-  <meta property="og:image" content="{{ site_root | append: 'assets/social-preview-v2.png' | escape }}">
-  <meta property="og:image:secure_url" content="{{ site_root | append: 'assets/social-preview-v2.png' | escape }}">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Sarvesh — software development, automation and AI, with his portrait">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sarvesh — Software Developer, Automation & AI">
-  <meta name="twitter:description" content="Sarvesh builds software, automates business workflows, connects enterprise platforms, and integrates practical AI using Node.js, Python, and APIs.">
-  <meta name="twitter:image" content="{{ site_root | append: 'assets/social-preview-v2.png' | escape }}">
-  <meta name="twitter:image:alt" content="Sarvesh — software development, automation and AI, with his portrait">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css">
-  <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": {{ site_root | append: '#sarvesh' | jsonify }},
-      "name": "Sarvesh",
-      "url": {{ site_root | jsonify }},
-      "image": {{ site_root | append: 'assets/sarvesh-portrait.webp' | jsonify }},
-      "jobTitle": "Software Developer & Automation Engineer",
-      "description": "Sarvesh builds software, automates business workflows, connects enterprise platforms, and integrates practical AI using Node.js, Python, and APIs.",
-      "sameAs": [
-        "https://www.linkedin.com/in/sarvesh-kumar-82a245b7"
-      ],
-      "knowsAbout": [
-        "Software development",
-        "Business process automation",
-        "Node.js",
-        "Python",
-        "API development",
-        "Enterprise integrations",
-        "Artificial intelligence",
-        "Natural language processing"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": {{ site_root | append: '#website' | jsonify }},
-      "url": {{ site_root | jsonify }},
-      "name": "Sarvesh — Software Developer, Automation & AI",
-      "inLanguage": "en"
-    },
-    {
-      "@type": "ProfilePage",
-      "@id": {{ site_root | append: '#webpage' | jsonify }},
-      "url": {{ site_root | jsonify }},
-      "name": "Sarvesh — Software Developer, Automation & AI",
-      "description": "Sarvesh builds software, automates business workflows, connects enterprise platforms, and integrates practical AI using Node.js, Python, and APIs.",
-      "inLanguage": "en",
-      "dateModified": "2026-10-05T19:45:25+00:00",
-      "isPartOf": {
-        "@id": {{ site_root | append: '#website' | jsonify }}
-      },
-      "mainEntity": {
-        "@id": {{ site_root | append: '#sarvesh' | jsonify }}
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'sha256-4LGmBjubTncE/XBF023qfVF13QFamThqFzelfVN0Gd0='; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f7fb" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{{ site.title | escape }}</title>
+    <meta name="description" content="{{ site.description | escape }}" />
+    <meta name="author" content="Sarvesh" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="{{ site_root | escape }}" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Sarvesh" />
+    <meta property="og:type" content="profile" />
+    <meta property="profile:first_name" content="Sarvesh" />
+    <meta property="og:title" content="{{ site.title | escape }}" />
+    <meta property="og:description" content="{{ site.description | escape }}" />
+    <meta property="og:url" content="{{ site_root | escape }}" />
+    <meta
+      property="og:image"
+      content="{{ site_root | append: 'assets/social-preview-v2.png' | escape }}"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="{{ site_root | append: 'assets/social-preview-v2.png' | escape }}"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Sarvesh — software development, automation and AI, with his portrait"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ site.title | escape }}" />
+    <meta name="twitter:description" content="{{ site.description | escape }}" />
+    <meta
+      name="twitter:image"
+      content="{{ site_root | append: 'assets/social-preview-v2.png' | escape }}"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Sarvesh — software development, automation and AI, with his portrait"
+    />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="assets/fonts/dm-sans-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/manrope-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": {{ site_root | append: '#sarvesh' | jsonify }},
+            "name": "Sarvesh",
+            "url": {{ site_root | jsonify }},
+            "image": {{ site_root | append: 'assets/sarvesh-portrait.webp' | jsonify }},
+            "jobTitle": "Software Developer & Automation Engineer",
+            "description": {{ site.description | jsonify }},
+            "sameAs": [
+              "https://www.linkedin.com/in/sarvesh-kumar-82a245b7"
+            ],
+            "knowsAbout": [
+              "Software development",
+              "Business process automation",
+              "Node.js",
+              "Python",
+              "API development",
+              "Enterprise integrations",
+              "Artificial intelligence",
+              "Natural language processing"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": {{ site_root | append: '#website' | jsonify }},
+            "url": {{ site_root | jsonify }},
+            "name": {{ site.title | jsonify }},
+            "inLanguage": "en"
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": {{ site_root | append: '#webpage' | jsonify }},
+            "url": {{ site_root | jsonify }},
+            "name": {{ site.title | jsonify }},
+            "description": {{ site.description | jsonify }},
+            "inLanguage": "en",
+            "dateModified": "2026-10-05T19:45:25+00:00",
+            "isPartOf": {
+              "@id": {{ site_root | append: '#website' | jsonify }}
+            },
+            "mainEntity": {
+              "@id": {{ site_root | append: '#sarvesh' | jsonify }}
+            }
+          }
+        ]
       }
-    }
-  ]
-}</script>
-  <script src="app.js" integrity="sha256-Q4SthBKKA8csJ7X0a7NbLItDb8j78i1NExan2lrsKkc=" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="reading-progress" aria-hidden="true"></div>
-  <header class="site-header">
-    <div class="header-inner wrap">
-      <a class="brand" href="#main" title="Back to the top"><span class="brand-symbol" aria-hidden="true">s<span>.</span></span><span>Sarvesh</span></a>
-      <nav class="main-nav" id="main-nav" aria-label="Main navigation"><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#background">Background</a><a href="#contact">Contact</a></nav>
-      <div class="header-actions"><button class="icon-button theme-button" type="button" aria-label="Switch to dark theme" aria-pressed="false"><svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg><svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></svg></button><a class="button small-button header-contact" href="mailto:sarvesh.official@icloud.com">Say hello</a><button class="icon-button menu-toggle" type="button" aria-label="Open navigation" aria-controls="main-nav" aria-expanded="false"><span></span><span></span></button></div>
-    </div>
-  </header>
-  <noscript><link rel="stylesheet" href="noscript.css"><p class="noscript-note wrap">Interactive demos need JavaScript. All expertise and background details are shown below.</p></noscript>
-  <main id="main">
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="intro-label"><span class="hello-mark" aria-hidden="true">✳︎</span> Hey, I’m Sarvesh</p>
-        <h1 id="hero-title">Write off<br> your work with<br> <span class="accent">Automation</span></h1>
-        <p class="hero-role">Software developer. Automation engineer.</p>
-        <p class="hero-description">I build software that <span class="rotating-word">connects.</span><br> From APIs and enterprise integrations to practical AI, I turn business challenges into working solutions.</p>
-        <div class="hero-actions"><a class="button primary" href="#expertise">Explore my expertise</a><a class="button quiet" href="mailto:sarvesh.official@icloud.com">Let’s talk</a></div>
-        <div class="hero-proof"><span class="proof-number">3<span>yrs</span></span><p>Building practical solutions<br> <strong>for global clients</strong></p><div class="proof-divider"></div><span class="proof-stack">Node.js<br> Python</span></div>
-      </div>
-      <figure class="portrait-scene" aria-label="Portrait of Sarvesh">
-        <div class="portrait-aura" aria-hidden="true"></div>
-        <span class="portrait-back-type" aria-hidden="true">SARVESH</span>
-        <div class="portrait-orbit" aria-hidden="true"><span>✳︎</span></div>
-        <img class="portrait-image" src="assets/sarvesh-portrait.webp" alt="Sarvesh in a navy suit and blue tie" width="1254" height="1254" fetchpriority="high" decoding="async">
-        <span class="portrait-side-note" aria-hidden="true">IDEAS INTO REALITY</span>
-        <figcaption class="portrait-caption"><span class="portrait-kicker">THE HUMAN BEHIND THE CODE</span><span class="portrait-name">Sarvesh<span>.</span></span><span class="portrait-specialties">Software · Automation · AI</span></figcaption>
-        <a class="portrait-demo-link" href="#workflow-demo" aria-label="See how I work — interactive workflow demo"><span>See how I work</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a>
-      </figure>
-    </section>
-    <div class="platform-bar wrap"><p>Connecting the tools<br> <strong>businesses rely on.</strong></p><div class="platforms"><span><span class="platform-icon" aria-hidden="true">BQ</span>BigQuery</span><span><span class="platform-icon" aria-hidden="true">D</span>Dynamics 365</span><span><span class="platform-icon" aria-hidden="true">BC</span>Business Central</span></div></div>
-    <section class="demo-section wrap" aria-labelledby="demo-section-title">
-      <div class="demo-intro"><p class="eyebrow">A SMALL LOOK AT HOW I THINK</p><h2 id="demo-section-title">From moving parts<br> to a working whole.</h2><p>Choose a workflow. Run the demo.<br> See the connections come together.</p><a class="demo-expertise-link" href="#expertise">Explore the toolkit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></div>
-      <div class="workflow-card" id="workflow-demo">
-        <div class="workflow-top"><span class="mono-label">IDEA → EXECUTION</span><span class="demo-tag">Interactive demo</span></div>
-        <h2>Things work better<br> when they work <span>together.</span></h2>
-        <div class="workflow-switch" role="group" aria-label="Choose a workflow"><button type="button" class="active" data-workflow="automation" aria-pressed="true">Automation</button><button type="button" data-workflow="api" aria-pressed="false">APIs</button><button type="button" data-workflow="ai" aria-pressed="false">AI</button></div>
-        <div class="flow-stages" role="group" aria-label="Illustrative automation workflow">
-          <div class="flow-stage" data-stage="0"><span class="stage-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8m-8 4h8m-8 4h5"/></svg></span><div><span class="stage-caption">01 / INPUT</span><strong class="stage-title">Business task</strong></div><span class="stage-state" aria-hidden="true"></span></div>
-          <div class="flow-connector" aria-hidden="true"><span></span></div>
-          <div class="flow-stage" data-stage="1"><span class="stage-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18"/></svg></span><div><span class="stage-caption">02 / PROCESS</span><strong class="stage-title">Connected workflow</strong></div><span class="stage-state" aria-hidden="true"></span></div>
-          <div class="flow-connector" aria-hidden="true"><span></span></div>
-          <div class="flow-stage" data-stage="2"><span class="stage-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m5 12 4 4L19 6"/><rect x="2" y="2" width="20" height="20" rx="5"/></svg></span><div><span class="stage-caption">03 / RESULT</span><strong class="stage-title">Task completed</strong></div><span class="stage-state" aria-hidden="true"></span></div>
+    </script>
+    <script
+      src="app.js"
+      integrity="sha256-4LGmBjubTncE/XBF023qfVF13QFamThqFzelfVN0Gd0="
+      defer
+    ></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="reading-progress" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="header-inner wrap">
+        <a class="brand" href="#main" title="Back to the top"
+          ><span class="brand-symbol" aria-hidden="true">s<span>.</span></span
+          ><span>Sarvesh</span></a
+        >
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+          <a href="#about">About</a><a href="#expertise">Expertise</a
+          ><a href="#background">Background</a><a href="#contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button
+            class="icon-button theme-button"
+            type="button"
+            aria-label="Switch to dark theme"
+            aria-pressed="false"
+          >
+            <svg
+              class="moon-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              aria-hidden="true"
+            >
+              <path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z" /></svg
+            ><svg
+              class="sun-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"
+              />
+            </svg></button
+          ><a class="button small-button header-contact" href="mailto:sarvesh.official@icloud.com"
+            >Say hello</a
+          ><button
+            class="icon-button menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-controls="main-nav"
+            aria-expanded="false"
+          >
+            <span></span><span></span>
+          </button>
         </div>
-        <div class="demo-controls"><button class="run-button" type="button"><svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5 12 7 3 12.5Z" fill="currentColor"/></svg><span>Run demo</span></button><p class="demo-status" role="status" aria-live="polite">Ready when you are.</p></div>
-        <p class="demo-footnote">An illustrative flow—no external systems are called.</p>
       </div>
-    </section>
+    </header>
+    <noscript
+      ><p class="noscript-note wrap">
+        Interactive demos need JavaScript. All expertise and background details are shown below.
+      </p></noscript
+    >
+    <main id="main">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="intro-label">
+            <span class="hello-mark" aria-hidden="true">✳︎</span> Hey, I’m Sarvesh
+          </p>
+          <h1 id="hero-title">
+            Write off<br />
+            your work with<br />
+            <span class="accent">Automation</span>
+          </h1>
+          <p class="hero-role">Software developer. Automation engineer.</p>
+          <p class="hero-description">
+            I build software that <span class="rotating-word">connects.</span><br />
+            From APIs and enterprise integrations to practical AI, I turn business challenges into
+            working solutions.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#expertise">Explore my expertise</a
+            ><a class="button quiet" href="mailto:sarvesh.official@icloud.com">Let’s talk</a>
+          </div>
+          <div class="hero-proof">
+            <span class="proof-number">3<span>yrs</span></span>
+            <p>
+              Building practical solutions<br />
+              <strong>for global clients</strong>
+            </p>
+            <div class="proof-divider"></div>
+            <span class="proof-stack"
+              >Node.js<br />
+              Python</span
+            >
+          </div>
+        </div>
+        <figure class="portrait-scene" aria-label="Portrait of Sarvesh">
+          <div class="portrait-aura" aria-hidden="true"></div>
+          <span class="portrait-back-type" aria-hidden="true">SARVESH</span>
+          <div class="portrait-orbit" aria-hidden="true"><span>✳︎</span></div>
+          <img
+            class="portrait-image"
+            src="assets/sarvesh-portrait.webp"
+            alt="Sarvesh in a navy suit and blue tie"
+            width="1254"
+            height="1254"
+            fetchpriority="high"
+            decoding="async"
+          />
+          <span class="portrait-side-note" aria-hidden="true">IDEAS INTO REALITY</span>
+          <figcaption class="portrait-caption">
+            <span class="portrait-kicker">THE HUMAN BEHIND THE CODE</span
+            ><span class="portrait-name">Sarvesh<span>.</span></span
+            ><span class="portrait-specialties">Software · Automation · AI</span>
+          </figcaption>
+          <a
+            class="portrait-demo-link"
+            href="#workflow-demo"
+            aria-label="See how I work — interactive workflow demo"
+            ><span>See how I work</span
+            ><svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              aria-hidden="true"
+            >
+              <path d="M5 19 19 5M5 5h14v14" /></svg
+          ></a>
+        </figure>
+      </section>
+      <div class="platform-bar wrap">
+        <p>
+          Connecting the tools<br />
+          <strong>businesses rely on.</strong>
+        </p>
+        <div class="platforms">
+          <span><span class="platform-icon" aria-hidden="true">BQ</span>BigQuery</span
+          ><span><span class="platform-icon" aria-hidden="true">D</span>Dynamics 365</span
+          ><span><span class="platform-icon" aria-hidden="true">BC</span>Business Central</span>
+        </div>
+      </div>
+      <section class="demo-section wrap" aria-labelledby="demo-section-title">
+        <div class="demo-intro">
+          <p class="eyebrow">A SMALL LOOK AT HOW I THINK</p>
+          <h2 id="demo-section-title">
+            From moving parts<br />
+            to a working whole.
+          </h2>
+          <p>
+            Choose a workflow. Run the demo.<br />
+            See the connections come together.
+          </p>
+          <a class="demo-expertise-link" href="#expertise"
+            >Explore the toolkit
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              aria-hidden="true"
+            >
+              <path d="M5 19 19 5M5 5h14v14" /></svg
+          ></a>
+        </div>
+        <div class="workflow-card" id="workflow-demo">
+          <div class="workflow-top">
+            <span class="mono-label">IDEA → EXECUTION</span
+            ><span class="demo-tag">Interactive demo</span>
+          </div>
+          <h2>
+            Things work better<br />
+            when they work <span>together.</span>
+          </h2>
+          <div class="workflow-switch" role="group" aria-label="Choose a workflow">
+            <button type="button" class="active" data-workflow="automation" aria-pressed="true">
+              Automation</button
+            ><button type="button" data-workflow="api" aria-pressed="false">APIs</button
+            ><button type="button" data-workflow="ai" aria-pressed="false">AI</button>
+          </div>
+          <div class="flow-stages" role="group" aria-label="Illustrative automation workflow">
+            <div class="flow-stage" data-stage="0">
+              <span class="stage-icon" aria-hidden="true"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <rect x="4" y="3" width="16" height="18" rx="3" />
+                  <path d="M8 8h8m-8 4h8m-8 4h5" /></svg
+              ></span>
+              <div>
+                <span class="stage-caption">01 / INPUT</span
+                ><strong class="stage-title">Business task</strong>
+              </div>
+              <span class="stage-state" aria-hidden="true"></span>
+            </div>
+            <div class="flow-connector" aria-hidden="true"><span></span></div>
+            <div class="flow-stage" data-stage="1">
+              <span class="stage-icon" aria-hidden="true"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18" /></svg
+              ></span>
+              <div>
+                <span class="stage-caption">02 / PROCESS</span
+                ><strong class="stage-title">Connected workflow</strong>
+              </div>
+              <span class="stage-state" aria-hidden="true"></span>
+            </div>
+            <div class="flow-connector" aria-hidden="true"><span></span></div>
+            <div class="flow-stage" data-stage="2">
+              <span class="stage-icon" aria-hidden="true"
+                ><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <path d="m5 12 4 4L19 6" />
+                  <rect x="2" y="2" width="20" height="20" rx="5" /></svg
+              ></span>
+              <div>
+                <span class="stage-caption">03 / RESULT</span
+                ><strong class="stage-title">Task completed</strong>
+              </div>
+              <span class="stage-state" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="demo-controls">
+            <button class="run-button" type="button">
+              <svg width="13" height="13" viewBox="0 0 14 14" aria-hidden="true">
+                <path d="M3 1.5 12 7 3 12.5Z" fill="currentColor" /></svg
+              ><span>Run demo</span>
+            </button>
+            <p class="demo-status" role="status" aria-live="polite">Ready when you are.</p>
+          </div>
+          <p class="demo-footnote">An illustrative flow—no external systems are called.</p>
+        </div>
+      </section>
 
-    <section class="section wrap" id="about" aria-labelledby="about-title">
-      <div class="section-heading reveal"><div><p class="eyebrow">01 / A LITTLE ABOUT ME</p><h2 id="about-title">Business-minded.<br> <span class="muted-title">Technology-driven.</span></h2></div><p>Good software starts with understanding<br class="desktop-break"> what people actually need.</p></div>
-      <div class="about-grid">
-        <article class="about-story panel reveal"><span class="panel-label">THE APPROACH</span><h3>Make complexity<br> feel simple.</h3><p>I’m a Software Developer & Automation Engineer with three years of experience delivering business process automation for global clients.</p><p>I bring together workflow automation, API development, and system integrations tailored to business needs—from the first conversation to deployment and client training.</p><div class="story-bottom"><span class="mini-monogram">S.</span><span>Build thoughtfully.<br> Keep it practical.</span></div></article>
-        <article class="experience-panel panel reveal"><span class="panel-label">HANDS-ON EXPERIENCE</span><div class="big-number">03<span>years</span></div><p>Building, integrating,<br> and automating.</p><div class="experience-rings" aria-hidden="true"><span>BUILD</span><span>CONNECT</span><span>AUTOMATE</span></div></article>
-        <article class="ai-panel panel reveal"><span class="panel-label">BEYOND THE WORKFLOW</span><span class="ai-symbol" aria-hidden="true">✳︎</span><h3>AI with<br> a purpose.</h3><p>Model training, NLP-based chatbots, and personalized AI solutions that fit real business needs.</p><div class="mini-tags"><span>ChatGPT APIs</span><span>Gemini APIs</span><span>NLP</span></div></article>
+      <section class="section wrap" id="about" aria-labelledby="about-title">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">01 / A LITTLE ABOUT ME</p>
+            <h2 id="about-title">
+              Business-minded.<br />
+              <span class="muted-title">Technology-driven.</span>
+            </h2>
+          </div>
+          <p>
+            Good software starts with understanding<br class="desktop-break" />
+            what people actually need.
+          </p>
+        </div>
+        <div class="about-grid">
+          <article class="about-story panel reveal">
+            <span class="panel-label">THE APPROACH</span>
+            <h3>
+              Make complexity<br />
+              feel simple.
+            </h3>
+            <p>
+              I’m a Software Developer & Automation Engineer with three years of experience
+              delivering business process automation for global clients.
+            </p>
+            <p>
+              I bring together workflow automation, API development, and system integrations
+              tailored to business needs—from the first conversation to deployment and client
+              training.
+            </p>
+            <div class="story-bottom">
+              <span class="mini-monogram">S.</span
+              ><span
+                >Build thoughtfully.<br />
+                Keep it practical.</span
+              >
+            </div>
+          </article>
+          <article class="experience-panel panel reveal">
+            <span class="panel-label">HANDS-ON EXPERIENCE</span>
+            <div class="big-number">03<span>years</span></div>
+            <p>
+              Building, integrating,<br />
+              and automating.
+            </p>
+            <div class="experience-rings" aria-hidden="true">
+              <span>BUILD</span><span>CONNECT</span><span>AUTOMATE</span>
+            </div>
+          </article>
+          <article class="ai-panel panel reveal">
+            <span class="panel-label">BEYOND THE WORKFLOW</span
+            ><span class="ai-symbol" aria-hidden="true">✳︎</span>
+            <h3>
+              AI with<br />
+              a purpose.
+            </h3>
+            <p>
+              Model training, NLP-based chatbots, and personalized AI solutions that fit real
+              business needs.
+            </p>
+            <div class="mini-tags">
+              <span>ChatGPT APIs</span><span>Gemini APIs</span><span>NLP</span>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section wrap" id="expertise" aria-labelledby="expertise-title">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">02 / THE TOOLKIT</p>
+            <h2 id="expertise-title">
+              Different tools.<br />
+              <span class="muted-title">One connected mindset.</span>
+            </h2>
+          </div>
+          <p>Explore the skills behind the solutions.</p>
+        </div>
+        <div class="skills-explorer reveal">
+          <div class="skill-tabs" role="tablist" aria-label="Explore expertise categories">
+            <button
+              type="button"
+              role="tab"
+              id="tab-development"
+              aria-controls="panel-development"
+              aria-selected="true"
+              tabindex="0"
+            >
+              <span class="tab-number">01</span>Development</button
+            ><button
+              type="button"
+              role="tab"
+              id="tab-automation"
+              aria-controls="panel-automation"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <span class="tab-number">02</span>Automation</button
+            ><button
+              type="button"
+              role="tab"
+              id="tab-ai"
+              aria-controls="panel-ai"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <span class="tab-number">03</span>AI & ML</button
+            ><button
+              type="button"
+              role="tab"
+              id="tab-cloud"
+              aria-controls="panel-cloud"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <span class="tab-number">04</span>Cloud & security
+            </button>
+          </div>
+          <div
+            class="skill-panel"
+            id="panel-development"
+            role="tabpanel"
+            aria-labelledby="tab-development"
+            tabindex="0"
+          >
+            <div class="skill-description">
+              <span class="skill-mark" aria-hidden="true">{ }</span>
+              <h3>
+                From idea<br />
+                to working software.
+              </h3>
+              <p>
+                API-driven services, desktop applications, and cloud microservices using Node.js and
+                Python, with hands-on API development and testing.
+              </p>
+              <span class="skill-caption">SERVICES / APPLICATIONS / APIs</span>
+            </div>
+            <div class="skill-list">
+              <span class="featured-skill">Node.js</span><span class="featured-skill">Python</span
+              ><span>Flask</span><span>JavaScript</span><span>REST</span><span>GraphQL</span
+              ><span>SQL</span><span>Java</span><span>C / C++</span><span>HTML / CSS</span>
+            </div>
+          </div>
+          <div
+            class="skill-panel"
+            id="panel-automation"
+            role="tabpanel"
+            aria-labelledby="tab-automation"
+            tabindex="0"
+            hidden
+          >
+            <div class="skill-description">
+              <span class="skill-mark" aria-hidden="true">[ + ]</span>
+              <h3>
+                Less repetitive work.<br />
+                More connected systems.
+              </h3>
+              <p>
+                Business process automation and enterprise integrations tailored to the way teams
+                work, connecting platforms through APIs and custom workflows.
+              </p>
+              <span class="skill-caption">WORKFLOWS / ENTERPRISE INTEGRATIONS</span>
+            </div>
+            <div class="skill-list">
+              <span class="featured-skill">BigQuery</span
+              ><span class="featured-skill">Dynamics 365</span><span>Business Central</span
+              ><span>Apps Script</span><span>Workflow automation</span><span>API integrations</span
+              ><span>Business process automation</span>
+            </div>
+          </div>
+          <div
+            class="skill-panel"
+            id="panel-ai"
+            role="tabpanel"
+            aria-labelledby="tab-ai"
+            tabindex="0"
+            hidden
+          >
+            <div class="skill-description">
+              <span class="skill-mark" aria-hidden="true">✳︎</span>
+              <h3>
+                Intelligence that<br />
+                fits the task.
+              </h3>
+              <p>
+                AI model training and integration, NLP-based chatbots, and personalized AI
+                solutions, supported by deployment and client training.
+              </p>
+              <span class="skill-caption">MODELS / LANGUAGE / CONVERSATIONS</span>
+            </div>
+            <div class="skill-list">
+              <span class="featured-skill">ChatGPT APIs</span
+              ><span class="featured-skill">Gemini APIs</span><span>NLP</span><span>Chatbots</span
+              ><span>Model training</span><span>AI integration</span
+              ><span>Personalized AI solutions</span>
+            </div>
+          </div>
+          <div
+            class="skill-panel"
+            id="panel-cloud"
+            role="tabpanel"
+            aria-labelledby="tab-cloud"
+            tabindex="0"
+            hidden
+          >
+            <div class="skill-description">
+              <span class="skill-mark" aria-hidden="true">/ /</span>
+              <h3>
+                Built to connect.<br />
+                Ready to deploy.
+              </h3>
+              <p>
+                Cloud platforms, server environments, and API authentication for integrated
+                applications, with intermediate Linux experience.
+              </p>
+              <span class="skill-caption">PLATFORMS / AUTHENTICATION / DEPLOYMENT</span>
+            </div>
+            <div class="skill-list">
+              <span class="featured-skill">GCP</span><span class="featured-skill">Azure</span
+              ><span>Windows Server / IIS</span><span>Linux</span><span>OAuth 1.0 / 2.0</span
+              ><span>PKCE</span><span>JWT</span><span>Basic Auth</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section wrap background" id="background" aria-labelledby="background-title">
+        <div class="background-intro reveal">
+          <p class="eyebrow">03 / THE FOUNDATION</p>
+          <h2 id="background-title">
+            Curiosity doesn’t<br />
+            <span class="muted-title">graduate.</span>
+          </h2>
+          <p>
+            Computer applications. Economics.<br />
+            A habit of keeping on learning.
+          </p>
+          <div class="interest-box">
+            <span class="panel-label">OFF THE CLOCK</span>
+            <div class="interest-tags">
+              <span>Coding</span><span>Music</span><span>Travel</span><span>Writing</span>
+            </div>
+          </div>
+        </div>
+        <div class="background-detail reveal">
+          <div class="background-tabs" role="tablist" aria-label="Choose background details">
+            <button
+              role="tab"
+              id="tab-education"
+              aria-selected="true"
+              aria-controls="panel-education"
+              tabindex="0"
+              type="button"
+            >
+              Education</button
+            ><button
+              role="tab"
+              id="tab-certifications"
+              aria-selected="false"
+              aria-controls="panel-certifications"
+              tabindex="-1"
+              type="button"
+            >
+              Certifications
+            </button>
+          </div>
+          <div
+            id="panel-education"
+            class="background-panel"
+            role="tabpanel"
+            aria-labelledby="tab-education"
+            tabindex="0"
+          >
+            <article class="education-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div>
+                <span class="date">2018 — 2021</span>
+                <h3>Master of Computer Applications</h3>
+                <p>Anugrah Narayan College, Patna</p>
+                <span class="grade">75.50% aggregate</span>
+              </div>
+              <span class="degree">MCA</span>
+            </article>
+            <article class="education-item">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div>
+                <span class="date">2015 — 2018</span>
+                <h3>BA · Economics Hons.</h3>
+                <p>R.R.S. College, Mokama</p>
+                <span class="grade">57.7% aggregate</span>
+              </div>
+              <span class="degree">BA</span>
+            </article>
+            <details class="earlier-education">
+              <summary>Earlier education<span aria-hidden="true">+</span></summary>
+              <div>
+                <p>
+                  <strong>Intermediate · PCM</strong><br />
+                  R.R.S. College, Mokama<br />
+                  2013–2015 · 60%
+                </p>
+                <p>
+                  <strong>Matriculation</strong><br />
+                  Shila High School, Aunta<br />
+                  2012–2013 · 62.4%
+                </p>
+              </div>
+            </details>
+          </div>
+          <div
+            id="panel-certifications"
+            class="background-panel"
+            role="tabpanel"
+            aria-labelledby="tab-certifications"
+            tabindex="0"
+            hidden
+          >
+            <article class="certification">
+              <span class="certificate-symbol" aria-hidden="true">✳︎</span
+              ><span class="date">UDEMY</span>
+              <h3>
+                Data Science, Machine Learning,<br />
+                Deep Learning & NLP Bootcamp
+              </h3>
+            </article>
+            <article class="certification">
+              <span class="certificate-symbol" aria-hidden="true">{ }</span
+              ><span class="date">COURSERA</span>
+              <h3>Python 3 Programming</h3>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="contact-section wrap reveal" id="contact" aria-labelledby="contact-title">
+        <div class="contact-card">
+          <div class="contact-heading">
+            <p class="eyebrow">04 / SAY HELLO</p>
+            <h2 id="contact-title">
+              Let’s build<br />
+              something <span>useful.</span>
+            </h2>
+            <p>
+              Software, automation, AI.<br />
+              Good conversations are where it starts.
+            </p>
+          </div>
+          <div class="contact-details">
+            <span class="contact-label">FIND ME IN YOUR INBOX</span
+            ><a class="email-link" href="mailto:sarvesh.official@icloud.com"
+              >sarvesh.official@icloud.com</a
+            >
+            <div class="contact-actions">
+              <a class="button lime-button" href="mailto:sarvesh.official@icloud.com"
+                >Start a conversation</a
+              ><button class="copy-button" type="button">
+                <svg
+                  aria-hidden="true"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                >
+                  <rect x="8" y="8" width="12" height="12" rx="2" />
+                  <path d="M16 8V4H4v12h4" /></svg
+                ><span>Copy email</span>
+              </button>
+            </div>
+            <p class="copy-status" role="status" aria-live="polite"></p>
+            <a
+              class="linkedin-link"
+              href="https://www.linkedin.com/in/sarvesh-kumar-82a245b7"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span class="linkedin-icon" aria-hidden="true">in</span> Connect on LinkedIn</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer wrap">
+      <a class="brand" href="#main"
+        ><span class="brand-symbol" aria-hidden="true">s<span>.</span></span
+        ><span>Sarvesh</span></a
+      >
+      <p>Built around curiosity.</p>
+      <div class="footer-controls">
+        <button class="motion-button" type="button" aria-pressed="false">Pause motion</button
+        ><a href="#main">Back to top</a>
       </div>
-    </section>
-    <section class="section wrap" id="expertise" aria-labelledby="expertise-title">
-      <div class="section-heading reveal"><div><p class="eyebrow">02 / THE TOOLKIT</p><h2 id="expertise-title">Different tools.<br> <span class="muted-title">One connected mindset.</span></h2></div><p>Explore the skills behind the solutions.</p></div>
-      <div class="skills-explorer reveal">
-        <div class="skill-tabs" role="tablist" aria-label="Explore expertise categories"><button type="button" role="tab" id="tab-development" aria-controls="panel-development" aria-selected="true" tabindex="0"><span class="tab-number">01</span>Development</button><button type="button" role="tab" id="tab-automation" aria-controls="panel-automation" aria-selected="false" tabindex="-1"><span class="tab-number">02</span>Automation</button><button type="button" role="tab" id="tab-ai" aria-controls="panel-ai" aria-selected="false" tabindex="-1"><span class="tab-number">03</span>AI & ML</button><button type="button" role="tab" id="tab-cloud" aria-controls="panel-cloud" aria-selected="false" tabindex="-1"><span class="tab-number">04</span>Cloud & security</button></div>
-        <div class="skill-panel" id="panel-development" role="tabpanel" aria-labelledby="tab-development" tabindex="0"><div class="skill-description"><span class="skill-mark" aria-hidden="true">{ }</span><h3>From idea<br> to working software.</h3><p>API-driven services, desktop applications, and cloud microservices using Node.js and Python, with hands-on API development and testing.</p><span class="skill-caption">SERVICES / APPLICATIONS / APIs</span></div><div class="skill-list"><span class="featured-skill">Node.js</span><span class="featured-skill">Python</span><span>Flask</span><span>JavaScript</span><span>REST</span><span>GraphQL</span><span>SQL</span><span>Java</span><span>C / C++</span><span>HTML / CSS</span></div></div>
-        <div class="skill-panel" id="panel-automation" role="tabpanel" aria-labelledby="tab-automation" tabindex="0" hidden><div class="skill-description"><span class="skill-mark" aria-hidden="true">[ + ]</span><h3>Less repetitive work.<br> More connected systems.</h3><p>Business process automation and enterprise integrations tailored to the way teams work, connecting platforms through APIs and custom workflows.</p><span class="skill-caption">WORKFLOWS / ENTERPRISE INTEGRATIONS</span></div><div class="skill-list"><span class="featured-skill">BigQuery</span><span class="featured-skill">Dynamics 365</span><span>Business Central</span><span>Apps Script</span><span>Workflow automation</span><span>API integrations</span><span>Business process automation</span></div></div>
-        <div class="skill-panel" id="panel-ai" role="tabpanel" aria-labelledby="tab-ai" tabindex="0" hidden><div class="skill-description"><span class="skill-mark" aria-hidden="true">✳︎</span><h3>Intelligence that<br> fits the task.</h3><p>AI model training and integration, NLP-based chatbots, and personalized AI solutions, supported by deployment and client training.</p><span class="skill-caption">MODELS / LANGUAGE / CONVERSATIONS</span></div><div class="skill-list"><span class="featured-skill">ChatGPT APIs</span><span class="featured-skill">Gemini APIs</span><span>NLP</span><span>Chatbots</span><span>Model training</span><span>AI integration</span><span>Personalized AI solutions</span></div></div>
-        <div class="skill-panel" id="panel-cloud" role="tabpanel" aria-labelledby="tab-cloud" tabindex="0" hidden><div class="skill-description"><span class="skill-mark" aria-hidden="true">/ /</span><h3>Built to connect.<br> Ready to deploy.</h3><p>Cloud platforms, server environments, and API authentication for integrated applications, with intermediate Linux experience.</p><span class="skill-caption">PLATFORMS / AUTHENTICATION / DEPLOYMENT</span></div><div class="skill-list"><span class="featured-skill">GCP</span><span class="featured-skill">Azure</span><span>Windows Server / IIS</span><span>Linux</span><span>OAuth 1.0 / 2.0</span><span>PKCE</span><span>JWT</span><span>Basic Auth</span></div></div>
-      </div>
-    </section>
-    <section class="section wrap background" id="background" aria-labelledby="background-title">
-      <div class="background-intro reveal"><p class="eyebrow">03 / THE FOUNDATION</p><h2 id="background-title">Curiosity doesn’t<br> <span class="muted-title">graduate.</span></h2><p>Computer applications. Economics.<br> A habit of keeping on learning.</p><div class="interest-box"><span class="panel-label">OFF THE CLOCK</span><div class="interest-tags"><span>Coding</span><span>Music</span><span>Travel</span><span>Writing</span></div></div></div>
-      <div class="background-detail reveal"><div class="background-tabs" role="tablist" aria-label="Choose background details"><button role="tab" id="tab-education" aria-selected="true" aria-controls="panel-education" tabindex="0" type="button">Education</button><button role="tab" id="tab-certifications" aria-selected="false" aria-controls="panel-certifications" tabindex="-1" type="button">Certifications</button></div><div id="panel-education" class="background-panel" role="tabpanel" aria-labelledby="tab-education" tabindex="0"><article class="education-item"><span class="timeline-dot" aria-hidden="true"></span><div><span class="date">2018 — 2021</span><h3>Master of Computer Applications</h3><p>Anugrah Narayan College, Patna</p><span class="grade">75.50% aggregate</span></div><span class="degree">MCA</span></article><article class="education-item"><span class="timeline-dot" aria-hidden="true"></span><div><span class="date">2015 — 2018</span><h3>BA · Economics Hons.</h3><p>R.R.S. College, Mokama</p><span class="grade">57.7% aggregate</span></div><span class="degree">BA</span></article><details class="earlier-education"><summary>Earlier education<span aria-hidden="true">+</span></summary><div><p><strong>Intermediate · PCM</strong><br> R.R.S. College, Mokama<br> 2013–2015 · 60%</p><p><strong>Matriculation</strong><br> Shila High School, Aunta<br> 2012–2013 · 62.4%</p></div></details></div><div id="panel-certifications" class="background-panel" role="tabpanel" aria-labelledby="tab-certifications" tabindex="0" hidden><article class="certification"><span class="certificate-symbol" aria-hidden="true">✳︎</span><span class="date">UDEMY</span><h3>Data Science, Machine Learning,<br> Deep Learning & NLP Bootcamp</h3></article><article class="certification"><span class="certificate-symbol" aria-hidden="true">{ }</span><span class="date">COURSERA</span><h3>Python 3 Programming</h3></article></div></div>
-    </section>
-    <section class="contact-section wrap reveal" id="contact" aria-labelledby="contact-title"><div class="contact-card"><div class="contact-heading"><p class="eyebrow">04 / SAY HELLO</p><h2 id="contact-title">Let’s build<br> something <span>useful.</span></h2><p>Software, automation, AI.<br> Good conversations are where it starts.</p></div><div class="contact-details"><span class="contact-label">FIND ME IN YOUR INBOX</span><a class="email-link" href="mailto:sarvesh.official@icloud.com">sarvesh.official@icloud.com</a><div class="contact-actions"><a class="button lime-button" href="mailto:sarvesh.official@icloud.com">Start a conversation</a><button class="copy-button" type="button"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/></svg><span>Copy email</span></button></div><p class="copy-status" role="status" aria-live="polite"></p><a class="linkedin-link" href="https://www.linkedin.com/in/sarvesh-kumar-82a245b7" target="_blank" rel="noopener noreferrer"><span class="linkedin-icon" aria-hidden="true">in</span> Connect on LinkedIn</a></div></div></section>
-  </main>
-  <footer class="footer wrap"><a class="brand" href="#main"><span class="brand-symbol" aria-hidden="true">s<span>.</span></span><span>Sarvesh</span></a><p>Built around curiosity.</p><div class="footer-controls"><button class="motion-button" type="button" aria-pressed="false">Pause motion</button><a href="#main">Back to top</a></div></footer>
-</body>
+    </footer>
+  </body>
 </html>

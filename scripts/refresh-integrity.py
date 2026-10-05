@@ -14,7 +14,13 @@ directive = "script-src '" + app_hash + "';"
 html, count = re.subn(r"script-src\s[^;]+;", lambda _: directive, html, count=1)
 if count != 1:
     raise SystemExit('Expected one script-src directive.')
-html, count = re.subn(r'<script src="app\.js"[^>]*></script>', '<script src="app.js" integrity="' + app_hash + '" defer></script>', html, count=1)
+def update_script(match):
+    tag = match.group(0)
+    if re.search(r'\bintegrity="[^"]*"', tag):
+        return re.sub(r'\bintegrity="[^"]*"', 'integrity="' + app_hash + '"', tag)
+    return tag.replace('src="app.js"', 'src="app.js" integrity="' + app_hash + '"')
+
+html, count = re.subn(r'<script\s+[^>]*\bsrc="app\.js"[^>]*></script>', update_script, html, count=1)
 if count != 1:
     raise SystemExit('Expected one app.js reference.')
 page.write_text(html, encoding='utf-8')

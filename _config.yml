@@ -1,7 +1,8 @@
 # GitHub Pages resolves the repository path and custom domain automatically.
 # Keep site_url empty on GitHub Pages. On another host, set its full public URL once.
-site_url: ""
-title: "Sarvesh — Software Developer, Automation & AI"
+site_url: ''
+title: 'Sarvesh — Software Developer, Automation & AI'
+description: 'Sarvesh builds software, automates business workflows, connects enterprise platforms, and integrates practical AI using Node.js, Python, and APIs.'
 lang: en
 theme: null
 plugins:

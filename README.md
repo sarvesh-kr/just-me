@@ -6,7 +6,7 @@ A static, responsive portfolio with a layered portrait, light and dark themes, a
 
 ## Edit and deploy
 
-Edit `index.html`, `style.css`, or `app.js`. After editing `app.js`, run `python3 scripts/refresh-integrity.py` to refresh the application CSP hash and integrity. GitHub Pages publishes `main` from `/ (root)` with HTTPS enforced, using its built-in Jekyll build. Keep `_config.yml` and `_includes/site-url.html`; do not add `.nojekyll`, which would disable URL generation.
+Edit `index.html`, `style.css`, or `app.js`. The SEO title and description have one source in `_config.yml`. After editing `app.js`, run `python3 scripts/refresh-integrity.py` to refresh the application CSP hash and integrity. GitHub Pages publishes `main` from `/ (root)` with HTTPS enforced, using its built-in Jekyll build. Keep `_config.yml` and `_includes/site-url.html`; do not add `.nojekyll`, which would disable URL generation.
 
 Canonical URLs, share-image URLs, structured profile data, sitemap, robots directive, and the 404 return link resolve from GitHub Pages’ domain metadata at build time. Setting or removing a custom domain through **Settings → Pages** (with its `CNAME` file) updates them on the next build. A repository rename is picked up on its next Pages build. Assets and the embed card’s portfolio navigation use relative paths.
 
@@ -22,7 +22,7 @@ GitHub Pages does not support arbitrary response-header configuration. Meta CSP 
 
 ## Search and sharing
 
-The page includes a canonical URL, descriptive metadata, ProfilePage/Person/WebSite JSON-LD, a 1200 × 630 Open Graph and Twitter share image, and `sitemap.xml`. It remains readable without JavaScript. The embed card and 404 page use `noindex`.
+The page includes a canonical URL, descriptive metadata, ProfilePage/Person/WebSite JSON-LD, a 1200 × 630 Open Graph and Twitter share image, and `sitemap.xml`. Content and navigation remain available with JavaScript disabled or the application script blocked; interactive controls appear after initialization. The embed card and 404 page use `noindex`.
 
 Submit https://sarvesh-kr.github.io/just-me/sitemap.xml in Google Search Console for the verified property. Search engine verification requires the account owner; indexing, ranking, and social-preview refresh timing cannot be guaranteed. Google’s Rich Results Test may not offer a rich result for every valid schema type.
 
