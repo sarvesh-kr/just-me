@@ -45,4 +45,4 @@ For the complete scrolling portfolio, use the main site URL with a descriptive t
 
 ## Assets and licenses
 
-Fonts are self-hosted variable Latin subsets of DM Sans and Manrope; their SIL Open Font Licenses are in `assets/fonts/`. `assets/sarvesh-portrait.webp` preserves portrait transparency and is encoded for quick delivery. `assets/social-preview.png` is a rendered share card. Keep fonts’ license files when redistributing them.
+Fonts are self-hosted variable Latin subsets of DM Sans and Manrope; their SIL Open Font Licenses are in `assets/fonts/`. `assets/sarvesh-portrait.webp` preserves portrait transparency and is encoded for quick delivery. `assets/social-preview-v2.png` is a rendered share card. Keep fonts’ license files when redistributing them.
