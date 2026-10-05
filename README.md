@@ -2,17 +2,21 @@
 
 Live: https://sarvesh-kr.github.io/just-me/
 
-A static, responsive portfolio with a layered portrait, light and dark themes, a workflow demo, an accessible skills explorer, and reduced-motion support. No build step or runtime dependencies are required.
+A static, responsive portfolio with a layered portrait, light and dark themes, a workflow demo, an accessible skills explorer, and reduced-motion support. GitHub Pages builds the URL templates automatically. The browser has no runtime library dependencies.
 
 ## Edit and deploy
 
-Edit `index.html`, `style.css`, or `app.js`. After editing `app.js` or the inline JSON-LD block, run `python3 scripts/refresh-integrity.py` before publishing to refresh the Content Security Policy hashes and script integrity. GitHub Pages publishes `main` from `/ (root)` with HTTPS enforced. Keep `.nojekyll`. Update canonical URLs, structured data, Open Graph metadata, embed links, and the sitemap together if the public domain changes.
+Edit `index.html`, `style.css`, or `app.js`. After editing `app.js`, run `python3 scripts/refresh-integrity.py` to refresh the application CSP hash and integrity. GitHub Pages publishes `main` from `/ (root)` with HTTPS enforced, using its built-in Jekyll build. Keep `_config.yml` and `_includes/site-url.html`; do not add `.nojekyll`, which would disable URL generation.
+
+Canonical URLs, share-image URLs, structured profile data, sitemap, robots directive, and the 404 return link resolve from GitHub Pages’ domain metadata at build time. Setting or removing a custom domain through **Settings → Pages** (with its `CNAME` file) updates them on the next build. A repository rename is picked up on its next Pages build. Assets and the embed card’s portfolio navigation use relative paths.
+
+For another hosting provider, set the full public URL including any subdirectory once in `_config.yml` under `site_url`, and deploy the Jekyll output. Leave `site_url` empty on GitHub Pages so its domain metadata remains authoritative. DNS setup, domain verification and TLS issuance are handled separately by the hosting provider.
 
 Contact: **sarvesh.official@icloud.com**. The phone number, original résumé, and deployment credentials are excluded.
 
 ## Security and privacy
 
-The pages use restrictive Content Security Policy and referrer policy metadata. Scripts, styles, fonts, and images are served locally; the main page permits only the integrity-checked application script and the exact hashed structured-data block. The policy blocks external connections, embedded child frames, plugin objects, base-URL changes, and form submissions. No inline event handlers, eval, trackers, API calls, forms, cookies, or visitor information are collected. Browser storage contains only theme and motion preferences. New-tab links use `noopener noreferrer`.
+The pages use restrictive Content Security Policy and referrer policy metadata. Scripts, styles, fonts, and images are served locally; the main page authorizes only the integrity-checked application script. JSON-LD is a non-executable data block generated during the build, so changing the domain does not weaken the script policy. The policy blocks external connections, embedded child frames, plugin objects, base-URL changes, and form submissions. No inline event handlers, eval, trackers, API calls, forms, cookies, or visitor information are collected. Browser storage contains only theme and motion preferences. New-tab links use `noopener noreferrer`.
 
 GitHub Pages does not support arbitrary response-header configuration. Meta CSP cannot enforce `frame-ancestors`; HSTS, `X-Content-Type-Options`, Permissions Policy, and other HTTP headers are controlled by the host. No `_headers` file is claimed to configure GitHub Pages. This public portfolio is deliberately embeddable. Rehosting behind a configurable proxy would allow additional response policies.
 
@@ -25,6 +29,8 @@ Submit https://sarvesh-kr.github.io/just-me/sitemap.xml in Google Search Console
 A portable `robots.txt` is included. Crawlers normally read robots.txt at the host root (`https://sarvesh-kr.github.io/robots.txt`), so the file under `/just-me/` is not a host-wide crawler policy. The HTML robots directives apply to this portfolio.
 
 ## Embed the profile card
+
+Replace the example iframe address with your public site address when embedding elsewhere. Existing snippets on third-party websites cannot be rewritten automatically by this repository; a domain change should keep redirects if old embeds need to continue working. The card’s own portfolio link automatically follows its hosting location.
 
 The script-free card works without tracking, clipboard permissions, or parent-window messaging. Its portfolio link opens a new tab.
 

@@ -1,0 +1,14 @@
+# GitHub Pages resolves the repository path and custom domain automatically.
+# Keep site_url empty on GitHub Pages. On another host, set its full public URL once.
+site_url: ""
+title: "Sarvesh — Software Developer, Automation & AI"
+lang: en
+theme: null
+plugins:
+  - jekyll-github-metadata
+exclude:
+  - README.md
+  - scripts
+  - Gemfile
+  - Gemfile.lock
+  - vendor

@@ -1,3 +1,7 @@
+---
+layout: null
+---
+{%- include site-url.html -%}
 User-agent: *
 Allow: /
-Sitemap: https://sarvesh-kr.github.io/just-me/sitemap.xml
+Sitemap: {{ site_root }}sitemap.xml

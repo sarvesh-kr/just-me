@@ -1,2 +1,6 @@
+---
+layout: null
+---
+{%- include site-url.html -%}
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://sarvesh-kr.github.io/just-me/</loc><lastmod>2026-10-05T19:45:25+00:00</lastmod></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{{ site_root | escape }}</loc><lastmod>{{ site.time | date_to_xmlschema }}</lastmod></url></urlset>

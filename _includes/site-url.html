@@ -1,0 +1,11 @@
+{%- assign site_root = site.site_url | default: site.github.url | default: site.url | strip -%}
+{%- if site.site_url == nil or site.site_url == empty -%}
+  {%- if site.github.url == nil or site.github.url == empty -%}
+    {%- assign site_root = site_root | append: site.baseurl -%}
+  {%- endif -%}
+  {%- assign site_root = site_root | replace: 'http://', 'https://' -%}
+{%- endif -%}
+{%- assign last_character = site_root | slice: -1, 1 -%}
+{%- unless last_character == '/' -%}
+  {%- assign site_root = site_root | append: '/' -%}
+{%- endunless -%}

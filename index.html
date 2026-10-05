@@ -1,8 +1,12 @@
+---
+layout: null
+---
+{%- include site-url.html -%}
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'sha256-Q4SthBKKA8csJ7X0a7NbLItDb8j78i1NExan2lrsKkc=' 'sha256-4t5UYZHobEi1NZDwt8VdfBixeA1ZWOTigwrZNbG+xyE='; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'sha256-Q4SthBKKA8csJ7X0a7NbLItDb8j78i1NExan2lrsKkc='; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f7fb">
@@ -11,16 +15,16 @@
   <meta name="description" content="Sarvesh builds software, automates business workflows, connects enterprise platforms, and integrates practical AI using Node.js, Python, and APIs.">
   <meta name="author" content="Sarvesh">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://sarvesh-kr.github.io/just-me/">
+  <link rel="canonical" href="{{ site_root | escape }}">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Sarvesh">
   <meta property="og:type" content="profile">
   <meta property="profile:first_name" content="Sarvesh">
   <meta property="og:title" content="Sarvesh — Software Developer, Automation & AI">
   <meta property="og:description" content="Sarvesh builds software, automates business workflows, connects enterprise platforms, and integrates practical AI using Node.js, Python, and APIs.">
-  <meta property="og:url" content="https://sarvesh-kr.github.io/just-me/">
-  <meta property="og:image" content="https://sarvesh-kr.github.io/just-me/assets/social-preview-v2.png">
-  <meta property="og:image:secure_url" content="https://sarvesh-kr.github.io/just-me/assets/social-preview-v2.png">
+  <meta property="og:url" content="{{ site_root | escape }}">
+  <meta property="og:image" content="{{ site_root | append: 'assets/social-preview-v2.png' | escape }}">
+  <meta property="og:image:secure_url" content="{{ site_root | append: 'assets/social-preview-v2.png' | escape }}">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -28,7 +32,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sarvesh — Software Developer, Automation & AI">
   <meta name="twitter:description" content="Sarvesh builds software, automates business workflows, connects enterprise platforms, and integrates practical AI using Node.js, Python, and APIs.">
-  <meta name="twitter:image" content="https://sarvesh-kr.github.io/just-me/assets/social-preview-v2.png">
+  <meta name="twitter:image" content="{{ site_root | append: 'assets/social-preview-v2.png' | escape }}">
   <meta name="twitter:image:alt" content="Sarvesh — software development, automation and AI, with his portrait">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -39,10 +43,10 @@
   "@graph": [
     {
       "@type": "Person",
-      "@id": "https://sarvesh-kr.github.io/just-me/#sarvesh",
+      "@id": {{ site_root | append: '#sarvesh' | jsonify }},
       "name": "Sarvesh",
-      "url": "https://sarvesh-kr.github.io/just-me/",
-      "image": "https://sarvesh-kr.github.io/just-me/assets/sarvesh-portrait.webp",
+      "url": {{ site_root | jsonify }},
+      "image": {{ site_root | append: 'assets/sarvesh-portrait.webp' | jsonify }},
       "jobTitle": "Software Developer & Automation Engineer",
       "description": "Sarvesh builds software, automates business workflows, connects enterprise platforms, and integrates practical AI using Node.js, Python, and APIs.",
       "sameAs": [
@@ -61,24 +65,24 @@
     },
     {
       "@type": "WebSite",
-      "@id": "https://sarvesh-kr.github.io/just-me/#website",
-      "url": "https://sarvesh-kr.github.io/just-me/",
+      "@id": {{ site_root | append: '#website' | jsonify }},
+      "url": {{ site_root | jsonify }},
       "name": "Sarvesh — Software Developer, Automation & AI",
       "inLanguage": "en"
     },
     {
       "@type": "ProfilePage",
-      "@id": "https://sarvesh-kr.github.io/just-me/#webpage",
-      "url": "https://sarvesh-kr.github.io/just-me/",
+      "@id": {{ site_root | append: '#webpage' | jsonify }},
+      "url": {{ site_root | jsonify }},
       "name": "Sarvesh — Software Developer, Automation & AI",
       "description": "Sarvesh builds software, automates business workflows, connects enterprise platforms, and integrates practical AI using Node.js, Python, and APIs.",
       "inLanguage": "en",
       "dateModified": "2026-10-05T19:45:25+00:00",
       "isPartOf": {
-        "@id": "https://sarvesh-kr.github.io/just-me/#website"
+        "@id": {{ site_root | append: '#website' | jsonify }}
       },
       "mainEntity": {
-        "@id": "https://sarvesh-kr.github.io/just-me/#sarvesh"
+        "@id": {{ site_root | append: '#sarvesh' | jsonify }}
       }
     }
   ]
