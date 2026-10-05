@@ -37,6 +37,23 @@
   motionButton.addEventListener('click', () => { paused = !paused; storage.set('sarvesh-motion', paused ? 'paused' : 'running'); updateMotion(); });
   prefersReduced.addEventListener('change', updateMotion);
   updateMotion();
+  const portrait = document.querySelector('.portrait-scene');
+  function resetPortrait() {
+    if (!portrait) return;
+    portrait.style.setProperty('--portrait-x', '0px');
+    portrait.style.setProperty('--portrait-y', '0px');
+  }
+  if (portrait && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    portrait.addEventListener('pointermove', event => {
+      if (reduced()) return;
+      const rect = portrait.getBoundingClientRect();
+      portrait.style.setProperty('--portrait-x', (((event.clientX - rect.left) / rect.width - .5) * 12).toFixed(2) + 'px');
+      portrait.style.setProperty('--portrait-y', (((event.clientY - rect.top) / rect.height - .5) * 8).toFixed(2) + 'px');
+    });
+    portrait.addEventListener('pointerleave', resetPortrait);
+    motionButton.addEventListener('click', resetPortrait);
+    prefersReduced.addEventListener('change', resetPortrait);
+  }
   const menuButton = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.main-nav');
   function closeMenu() { nav.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); menuButton.setAttribute('aria-label', 'Open navigation'); }

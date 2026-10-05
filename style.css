@@ -14,3 +14,34 @@ body{overflow-wrap:anywhere}.hero-copy,.background-intro,.background-detail,.con
 @media(max-width:720px){.hero,.background{grid-template-columns:minmax(0,1fr)}.skill-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.contact-card{grid-template-columns:minmax(0,1fr)}}
 .panel{transform:none}.panel:hover{transform:perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y))}body.motion-paused .panel{transform:none}
 @media(prefers-reduced-motion:reduce){.panel:hover{transform:none}}
+
+/* Portrait composition: typography, cutout and caption occupy separate depth planes. */
+.hero{grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:40px;padding-block:48px 54px}
+.portrait-scene{position:relative;isolation:isolate;min-width:0;width:100%;height:580px;margin:0;--portrait-x:0px;--portrait-y:0px;overflow:clip;border-radius:24px}
+.portrait-aura{position:absolute;z-index:0;width:88%;aspect-ratio:1;left:6%;top:16%;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e4e9ff,#cfd8ff 70%,#c4cefb);box-shadow:0 0 70px 25px #3856ef08;transform:translate(calc(var(--portrait-x) * -.3),calc(var(--portrait-y) * -.3));transition:transform .35s ease-out}
+.portrait-back-type{position:absolute;z-index:1;top:46px;left:50%;font-family:var(--display);font-size:clamp(3.5rem,6.9vw,6.1rem);font-weight:800;line-height:1;letter-spacing:-.075em;color:var(--blue);white-space:nowrap;transform:translate(calc(-50% - var(--portrait-x) * .45),calc(var(--portrait-y) * -.45));transition:transform .35s ease-out}
+.portrait-image{position:absolute;z-index:3;width:108%;max-width:none;height:auto;bottom:0;left:-4%;filter:drop-shadow(0 16px 20px #18234525);mask-image:linear-gradient(to bottom,#000 0%,#000 82%,transparent 100%);transform:translate(var(--portrait-x),var(--portrait-y));transition:transform .35s ease-out}
+.portrait-orbit{position:absolute;z-index:2;width:92%;height:64%;left:4%;top:21%;border:1px solid #3856ef30;border-radius:50%;transform:rotate(-24deg);pointer-events:none}
+.portrait-orbit>span{position:absolute;right:2%;top:17%;width:51px;height:51px;display:grid;place-items:center;background:var(--lime);border:6px solid var(--bg);border-radius:50%;font-size:1.75rem;color:#24324c;line-height:1;animation:hello-turn 20s linear infinite}
+.portrait-side-note{position:absolute;z-index:4;right:7px;top:38%;writing-mode:vertical-rl;font-size:.65rem;font-weight:600;letter-spacing:.22em;color:var(--muted)}
+.portrait-caption{position:absolute;z-index:5;left:12px;bottom:58px;padding:19px 24px 17px;border:1px solid #ffffff38;border-radius:4px 20px 20px 20px;background:#192846e6;backdrop-filter:blur(14px);box-shadow:0 15px 35px #11152120;color:#fff;transform:translate(calc(var(--portrait-x) * 1.5),calc(var(--portrait-y) * 1.5));transition:transform .35s ease-out}
+.portrait-kicker{display:block;font-size:.625rem;letter-spacing:.15em;font-weight:500;color:#d2dcf5;line-height:1.5}
+.portrait-name{display:block;font-family:var(--display);font-size:2.8rem;font-weight:750;line-height:1.25;letter-spacing:-.06em;margin-block:5px 3px}
+.portrait-name>span{color:var(--lime)}
+.portrait-specialties{display:block;font-size:.75rem;color:#d2dcf5}
+.portrait-demo-link{position:absolute;right:15px;bottom:10px;z-index:6;display:flex;align-items:center;gap:10px;min-height:44px;font-size:.75rem;font-weight:600;color:var(--blue)}
+.portrait-demo-link svg{transition:transform .2s}.portrait-demo-link:hover svg{transform:translate(2px,-2px)}
+body[data-theme=dark] .portrait-aura{background:radial-gradient(circle at 35% 30%,#354879,#253356 70%,#202b49);box-shadow:0 0 70px 25px #3856ef10}
+body[data-theme=dark] .portrait-orbit{border-color:#9aaaff35}
+.demo-section{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:90px;align-items:center;padding-top:64px}
+.demo-intro{min-width:0}.demo-intro h2{font-size:clamp(1.9rem,3vw,2.65rem)}.demo-intro>p:not(.eyebrow){margin-top:20px;color:var(--muted);font-size:.9375rem;line-height:1.8}
+.demo-expertise-link{display:inline-flex;align-items:center;gap:15px;min-height:44px;margin-top:19px;color:var(--blue);font-size:.875rem;font-weight:600}.demo-expertise-link:hover{gap:21px}
+.demo-section .workflow-card{width:100%;max-width:none}
+body.motion-paused .portrait-image,body.motion-paused .portrait-aura,body.motion-paused .portrait-caption{transform:none}
+body.motion-paused .portrait-back-type{transform:translateX(-50%)}
+@media(min-width:1600px){.hero{padding-block:65px 60px}.portrait-scene{height:610px}.portrait-back-type{font-size:6.6rem;top:42px}}
+@media(max-width:1100px){.hero{gap:24px}.portrait-scene{height:510px}.portrait-caption{left:6px;bottom:46px;padding:16px 18px}.portrait-name{font-size:2.5rem}.portrait-back-type{top:65px}.portrait-side-note{right:2px}.demo-section{gap:45px}}
+@media(max-width:900px){.portrait-scene{height:460px}.portrait-back-type{top:76px;font-size:clamp(3rem,6.5vw,4rem)}.portrait-caption{padding:14px 16px;bottom:42px}.portrait-name{font-size:2.1rem}.portrait-kicker{font-size:.55rem}.portrait-specialties{font-size:.675rem}.portrait-orbit>span{width:43px;height:43px;border-width:5px;font-size:1.4rem}.portrait-side-note{display:none}.demo-section{gap:30px}}
+@media(max-width:720px){.hero{grid-template-columns:minmax(0,1fr);gap:20px;padding-block:40px 34px}.portrait-scene{width:min(100%,500px);justify-self:center;height:auto;aspect-ratio:1/1.08}.portrait-back-type{font-size:clamp(3rem,12vw,5.5rem);top:9%}.portrait-aura{top:13%}.portrait-image{width:104%;left:-2%}.portrait-orbit{top:20%;height:63%}.portrait-caption{left:3%;bottom:12%;padding:16px 21px}.portrait-name{font-size:2.6rem}.portrait-kicker{font-size:.6rem}.portrait-specialties{font-size:.75rem}.portrait-demo-link{right:5%;bottom:2%}.demo-section{grid-template-columns:minmax(0,1fr);gap:28px;padding-top:48px}.demo-intro h2{font-size:2rem}.demo-intro h2 br{display:none}.demo-intro>p:not(.eyebrow){margin-top:16px}.demo-expertise-link{margin-top:12px}}
+@media(max-width:420px){.hero{padding-top:34px;gap:18px}.portrait-caption{padding:12px 16px;bottom:12%}.portrait-name{font-size:2.2rem}.portrait-kicker{font-size:.5rem}.portrait-specialties{font-size:.65rem}.portrait-back-type{font-size:12vw}.portrait-orbit>span{width:39px;height:39px;font-size:1.2rem;border-width:4px}.portrait-demo-link{font-size:.7rem;gap:8px}.demo-section{padding-top:40px}}
+@media(prefers-reduced-motion:reduce){.portrait-image,.portrait-aura,.portrait-caption{transform:none!important}.portrait-back-type{transform:translateX(-50%)!important}}
