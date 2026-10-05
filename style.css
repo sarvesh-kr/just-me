@@ -56,8 +56,7 @@ body[data-theme='dark'] {
   --shadow: 0 20px 65px #0002;
 }
 button,
-a,
-summary {
+a {
   -webkit-tap-highlight-color: transparent;
 }
 button,
@@ -75,13 +74,11 @@ button {
   color: inherit;
 }
 a,
-button,
-summary {
+button {
   touch-action: manipulation;
 }
 a:focus-visible,
 button:focus-visible,
-summary:focus-visible,
 [tabindex='0']:focus-visible {
   outline: 3px solid var(--blue);
   outline-offset: 5px;
@@ -940,156 +937,6 @@ h2 {
   font-weight: 550;
   padding: 16px 21px;
 }
-.background {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 70px;
-}
-.background-intro > p:not(.eyebrow) {
-  color: var(--muted);
-  font-size: 0.9375rem;
-  margin-top: 23px;
-}
-.interest-box {
-  margin-top: 33px;
-}
-.interest-box .panel-label {
-  margin-bottom: 14px;
-}
-.interest-tags {
-  display: flex;
-  gap: 7px;
-  flex-wrap: wrap;
-}
-.interest-tags > span {
-  padding: 5px 12px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  font-size: 0.75rem;
-  background: var(--surface);
-}
-.background-tabs {
-  display: flex;
-  gap: 25px;
-  border-bottom: 1px solid var(--line);
-}
-.background-tabs button {
-  border: 0;
-  background: transparent;
-  font-size: 0.9375rem;
-  padding: 0 0 16px;
-  color: var(--muted);
-  border-bottom: 2px solid transparent;
-  line-height: 1.5;
-}
-.background-tabs button[aria-selected='true'] {
-  color: var(--blue);
-  border-bottom-color: var(--blue);
-  font-weight: 550;
-}
-.background-panel {
-  min-height: 345px;
-  animation: panel-enter 0.3s ease;
-}
-.education-item {
-  padding: 26px 0 24px;
-  display: grid;
-  grid-template-columns: 12px 1fr auto;
-  gap: 18px;
-  position: relative;
-  border-bottom: 1px solid var(--line);
-}
-.timeline-dot {
-  width: 10px;
-  height: 10px;
-  border: 2px solid var(--blue);
-  border-radius: 50%;
-  margin-top: 7px;
-  position: relative;
-}
-.date {
-  display: block;
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  font-weight: 500;
-  color: var(--muted);
-  margin-bottom: 7px;
-}
-.education-item h3,
-.certification h3 {
-  font-size: 1.0625rem;
-  line-height: 1.5;
-  font-weight: 650;
-  letter-spacing: -0.025em;
-  margin-bottom: 5px;
-}
-.education-item p {
-  font-size: 0.875rem;
-  color: var(--muted);
-}
-.grade {
-  font-size: 0.75rem;
-  color: var(--muted);
-}
-.degree {
-  font-size: 0.75rem;
-  letter-spacing: 0.07em;
-  background: var(--blue-soft);
-  color: var(--blue);
-  padding: 4px 9px;
-  border-radius: 6px;
-  align-self: start;
-}
-.earlier-education summary {
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.875rem;
-  color: var(--muted);
-  list-style: none;
-  padding: 17px 0;
-  min-height: 48px;
-}
-.earlier-education summary::-webkit-details-marker {
-  display: none;
-}
-.earlier-education summary span {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  transition: transform 0.2s;
-}
-.earlier-education[open] summary span {
-  transform: rotate(45deg);
-}
-.earlier-education > div {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 22px;
-  padding-bottom: 16px;
-}
-.earlier-education p {
-  font-size: 0.875rem;
-  color: var(--muted);
-}
-.earlier-education strong {
-  color: var(--text);
-  font-weight: 550;
-}
-.certification {
-  position: relative;
-  padding: 28px 45px 24px 0;
-  border-bottom: 1px solid var(--line);
-}
-.certification h3 {
-  margin-bottom: 0;
-}
-.certificate-symbol {
-  position: absolute;
-  right: 0;
-  top: 38px;
-  color: var(--blue);
-  font-size: 1.5rem;
-}
 .contact-section {
   padding-block: 90px 0;
 }
@@ -1376,9 +1223,6 @@ html.motion-paused {
   .contact-actions {
     gap: 12px;
   }
-  .background {
-    gap: 44px;
-  }
 }
 @media (max-width: 900px) {
   .brand {
@@ -1468,13 +1312,6 @@ html.motion-paused {
   }
   .skill-description h3 {
     font-size: 1.5rem;
-  }
-  .background {
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 32px;
-  }
-  .background-intro h2 {
-    font-size: 2.05rem;
   }
   .contact-card {
     grid-template-columns: 1fr 1.1fr;
@@ -1696,25 +1533,6 @@ html.motion-paused {
     font-size: 1rem;
     padding: 12px 17px;
   }
-  .background {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .background-intro h2 {
-    font-size: clamp(2rem, 3.3vw, 2.85rem);
-  }
-  .background-intro > p:not(.eyebrow) {
-    margin-top: 18px;
-  }
-  .interest-box {
-    margin-top: 23px;
-  }
-  .background-panel {
-    min-height: 0;
-  }
-  .education-item {
-    padding-block: 23px;
-  }
   .contact-section {
     padding-top: 60px;
   }
@@ -1882,20 +1700,6 @@ html.motion-paused {
   .skill-caption {
     font-size: 0.75rem;
   }
-  .degree {
-    font-size: 0.75rem;
-  }
-  .education-item {
-    gap: 13px;
-    grid-template-columns: 10px 1fr auto;
-  }
-  .education-item h3 {
-    font-size: 1rem;
-  }
-  .earlier-education > div {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
   .contact-card {
     padding: 29px 23px;
     border-radius: 22px;
@@ -1947,8 +1751,7 @@ html.motion-paused {
   }
 }
 
-.mini-tags span,
-.interest-tags > span {
+.mini-tags span {
   font-size: 0.875rem;
 }
 /* Keep content usable when the browser's text size is enlarged. */
@@ -1956,8 +1759,6 @@ body {
   overflow-wrap: anywhere;
 }
 .hero-copy,
-.background-intro,
-.background-detail,
 .contact-heading,
 .contact-details {
   min-width: 0;
@@ -2009,15 +1810,11 @@ body {
 .skill-tabs {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-.background-tabs {
-  flex-wrap: wrap;
-}
 .footer-controls {
   min-width: 0;
 }
 @media (max-width: 720px) {
-  .hero,
-  .background {
+  .hero {
     grid-template-columns: minmax(0, 1fr);
   }
   .skill-tabs {
@@ -2433,11 +2230,7 @@ body.motion-paused .portrait-back-type {
 html:not(.js) [role='tabpanel'][hidden] {
   display: grid !important;
 }
-html:not(.js) [role='tabpanel'].background-panel[hidden] {
-  display: block !important;
-}
 html:not(.js) .skill-tabs,
-html:not(.js) .background-tabs,
 html:not(.js) .workflow-switch,
 html:not(.js) .run-button,
 html:not(.js) .demo-status,
