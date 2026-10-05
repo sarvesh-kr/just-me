@@ -1,4 +1,4 @@
-# Sarvesh Kumar — Personal portfolio
+# Sarvesh — Personal portfolio
 
 A responsive personal website with light and dark themes, an interactive workflow demo, a skills explorer, scroll animations, and reduced-motion support.
 
