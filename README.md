@@ -6,9 +6,11 @@ A static, responsive portfolio with a layered portrait, light and dark themes, a
 
 ## Edit and deploy
 
-Edit `index.html`, `style.css`, or `app.js`. The SEO title and description have one source in `_config.yml`. After editing `app.js`, run `python3 scripts/refresh-integrity.py` to refresh the application CSP hash and integrity. GitHub Pages publishes `main` from `/ (root)` with HTTPS enforced, using its built-in Jekyll build. Keep `_config.yml` and `_includes/site-url.html`; do not add `.nojekyll`, which would disable URL generation.
+Edit `index.html`, `style.css`, or `app.js`. The SEO title and description have one source in `_config.yml`. After editing `app.js`, `style.css`, or `embed.css`, run `python3 scripts/refresh-integrity.py` to refresh script integrity, the CSP hash, and content-based asset URL versions. This prevents returning visitors from using cached files from an older deployment. GitHub Pages publishes `main` from `/ (root)` with HTTPS enforced, using its built-in Jekyll build. Keep `_config.yml` and `_includes/site-url.html`; do not add `.nojekyll`, which would disable URL generation.
 
 Canonical URLs, share-image URLs, structured profile data, sitemap, robots directive, and the 404 return link resolve from GitHub Pages’ domain metadata at build time. Setting or removing a custom domain through **Settings → Pages** (with its `CNAME` file) updates them on the next build. A repository rename is picked up on its next Pages build. Assets and the embed card’s portfolio navigation use relative paths.
+
+When updating the page content, update `last_modified_at` in `_config.yml`. Structured data and the sitemap share this timestamp, so a deployment retry does not incorrectly mark the content as newly modified.
 
 For another hosting provider, set the full public URL including any subdirectory once in `_config.yml` under `site_url`, and deploy the Jekyll output. Leave `site_url` empty on GitHub Pages so its domain metadata remains authoritative. DNS setup, domain verification and TLS issuance are handled separately by the hosting provider.
 
@@ -23,6 +25,8 @@ GitHub Pages does not support arbitrary response-header configuration. Meta CSP 
 ## Search and sharing
 
 The page includes a canonical URL, descriptive metadata, ProfilePage/Person/WebSite JSON-LD, a 1200 × 630 Open Graph and Twitter share image, and `sitemap.xml`. Content and navigation remain available with JavaScript disabled or the application script blocked; interactive controls appear after initialization. The embed card and 404 page use `noindex`.
+
+Printing reveals every expertise panel and all sections, including content not yet scrolled into view. The favicon has SVG and PNG versions for browser compatibility.
 
 Submit https://sarvesh-kr.github.io/just-me/sitemap.xml in Google Search Console for the verified property. Search engine verification requires the account owner; indexing, ranking, and social-preview refresh timing cannot be guaranteed. Google’s Rich Results Test may not offer a rich result for every valid schema type.
 

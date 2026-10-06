@@ -3,4 +3,4 @@ layout: null
 ---
 {%- include site-url.html -%}
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{{ site_root | escape }}</loc><lastmod>{{ site.time | date_to_xmlschema }}</lastmod></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{{ site_root | escape }}</loc><lastmod>{{ site.last_modified_at | date_to_xmlschema }}</lastmod></url></urlset>

@@ -2274,3 +2274,57 @@ html:not(.js) .rotating-word {
 .portrait-caption {
   max-width: calc(100% - 32px);
 }
+
+/* Printed copies include content that has not been scrolled into view. */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .site-header {
+    position: static;
+  }
+  .reading-progress,
+  .skip-link,
+  .header-actions,
+  .main-nav,
+  .skill-tabs,
+  .workflow-switch,
+  .demo-controls,
+  .demo-footnote,
+  .footer-controls,
+  .portrait-demo-link,
+  .copy-button,
+  .copy-status,
+  .noscript-note {
+    display: none !important;
+  }
+  .reveal.ready,
+  .rotating-word {
+    opacity: 1 !important;
+    translate: 0 0 !important;
+    transform: none !important;
+  }
+  [role='tabpanel'][hidden] {
+    display: grid !important;
+  }
+  .skill-panel + .skill-panel {
+    border-top: 1px solid var(--line);
+  }
+  .portrait-scene,
+  .panel,
+  .skill-panel,
+  .contact-card,
+  .workflow-card {
+    break-inside: avoid;
+  }
+  .panel {
+    transform: none !important;
+  }
+}

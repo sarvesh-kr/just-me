@@ -119,6 +119,7 @@
       navigation.classList.toggle('open', open);
       button.setAttribute('aria-expanded', String(open));
       button.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      if (open) navigation.querySelector('a').focus({ preventScroll: true });
     });
     navigation.addEventListener('click', (event) => {
       if (event.target.closest('a')) closeMenu();
@@ -130,6 +131,10 @@
       }
     });
     document.addEventListener('click', (event) => {
+      if (isOpen() && !navigation.contains(event.target) && !button.contains(event.target))
+        closeMenu();
+    });
+    document.addEventListener('focusin', (event) => {
       if (isOpen() && !navigation.contains(event.target) && !button.contains(event.target))
         closeMenu();
     });
@@ -327,25 +332,43 @@
 
     const visibility = new Map();
     const links = [...navigation.querySelectorAll('a')];
+    let atPageEnd = false;
+
+    function updateNavigation() {
+      const active = atPageEnd
+        ? links[links.length - 1].getAttribute('href').slice(1)
+        : [...visibility].sort((first, second) => second[1] - first[1])[0]?.[0];
+      links.forEach((link) => {
+        const current = link.getAttribute('href') === '#' + active;
+        link.classList.toggle('current', current);
+        if (current) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }
+
     const navigationObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) visibility.set(entry.target.id, entry.intersectionRatio);
           else visibility.delete(entry.target.id);
         });
-        const active = [...visibility].sort((first, second) => second[1] - first[1])[0]?.[0];
-        links.forEach((link) => {
-          const current = link.getAttribute('href') === '#' + active;
-          link.classList.toggle('current', current);
-          if (current) link.setAttribute('aria-current', 'location');
-          else link.removeAttribute('aria-current');
-        });
+        updateNavigation();
       },
       { rootMargin: '-15% 0px -45% 0px', threshold: [0, 0.1, 0.25, 0.5, 0.75, 1] },
     );
     document
       .querySelectorAll('main > section[id]')
       .forEach((section) => navigationObserver.observe(section));
+
+    // The final section may never reach the reading area on a tall viewport.
+    const footerObserver = new IntersectionObserver(
+      ([entry]) => {
+        atPageEnd = entry.isIntersecting && entry.intersectionRatio >= 0.99;
+        updateNavigation();
+      },
+      { threshold: [0, 0.99, 1] },
+    );
+    footerObserver.observe(document.querySelector('.footer'));
   }
 
   function initializeReadingProgress() {

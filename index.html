@@ -8,7 +8,7 @@ layout: null
     <meta charset="utf-8" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'sha256-4LGmBjubTncE/XBF023qfVF13QFamThqFzelfVN0Gd0='; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests"
+      content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'sha256-gME7AnowY00o39Djr857whtfn1ZxzcVZbIzpOuaWrYc='; script-src-attr 'none'; style-src 'self'; style-src-attr 'none'; img-src 'self'; font-src 'self'; connect-src 'self'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests"
     />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -52,7 +52,8 @@ layout: null
       name="twitter:image:alt"
       content="Sarvesh — software development, automation and AI, with his portrait"
     />
-    <link rel="icon" href="assets/favicon-s.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/favicon-s.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="assets/favicon-s.svg" type="image/svg+xml" sizes="any" />
     <link
       rel="preload"
       href="assets/fonts/dm-sans-latin.woff2"
@@ -67,7 +68,7 @@ layout: null
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=7633ee75e1b7" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -108,7 +109,7 @@ layout: null
             "name": {{ site.title | jsonify }},
             "description": {{ site.description | jsonify }},
             "inLanguage": "en",
-            "dateModified": "2026-10-05T21:01:49+00:00",
+            "dateModified": {{ site.last_modified_at | date_to_xmlschema | jsonify }},
             "isPartOf": {
               "@id": {{ site_root | append: '#website' | jsonify }}
             },
@@ -120,8 +121,8 @@ layout: null
       }
     </script>
     <script
-      src="app.js"
-      integrity="sha256-4LGmBjubTncE/XBF023qfVF13QFamThqFzelfVN0Gd0="
+      src="app.js?v=80c13b027a30"
+      integrity="sha256-gME7AnowY00o39Djr857whtfn1ZxzcVZbIzpOuaWrYc="
       defer
     ></script>
   </head>
