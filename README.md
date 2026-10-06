@@ -14,7 +14,7 @@ When updating the page content, update `last_modified_at` in `_config.yml`. Stru
 
 For another hosting provider, set the full public URL including any subdirectory once in `_config.yml` under `site_url`, and deploy the Jekyll output. Leave `site_url` empty on GitHub Pages so its domain metadata remains authoritative. DNS setup, domain verification and TLS issuance are handled separately by the hosting provider.
 
-Contact: **sarvesh.official@icloud.com**. The phone number, original résumé, and deployment credentials are excluded.
+Contact: **pingme@sarvesh.si**. The phone number, original résumé, and deployment credentials are excluded.
 
 ## Custom domain
 
