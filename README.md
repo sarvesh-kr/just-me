@@ -6,7 +6,7 @@ A static, responsive portfolio with a layered portrait, light and dark themes, a
 
 ## Edit and deploy
 
-Edit `index.html`, `style.css`, or `app.js`. The SEO title and description have one source in `_config.yml`. After editing `app.js`, `style.css`, or `embed.css`, run `python3 scripts/refresh-integrity.py` to refresh script integrity, the CSP hash, and content-based asset URL versions. This prevents returning visitors from using cached files from an older deployment. GitHub Pages publishes `main` from `/ (root)` with HTTPS enforced, using its built-in Jekyll build. Keep `_config.yml` and `_includes/site-url.html`; do not add `.nojekyll`, which would disable URL generation.
+Edit `index.html`, `style.css`, or `app.js`. The SEO title and description have one source in `_config.yml`. After editing `app.js`, `style.css`, `embed.css`, or `404.css`, run `python3 scripts/refresh-integrity.py` to refresh script integrity, the CSP hash, and content-based asset URL versions. This prevents returning visitors from using cached files from an older deployment. GitHub Pages publishes `main` from `/ (root)` with HTTPS enforced, using its built-in Jekyll build. Keep `_config.yml` and `_includes/site-url.html`; do not add `.nojekyll`, which would disable URL generation.
 
 Canonical URLs, share-image URLs, structured profile data, sitemap, robots directive, and the 404 return link resolve from GitHub Pages’ domain metadata at build time. Setting or removing a custom domain through **Settings → Pages** (with its `CNAME` file) updates them on the next build. A repository rename is picked up on its next Pages build. Assets and the embed card’s portfolio navigation use relative paths.
 

@@ -1,16 +1,16 @@
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: normal;
   font-weight: 400 700;
   font-display: swap;
-  src: url('assets/fonts/dm-sans-latin.woff2') format('woff2');
+  src: url("assets/fonts/dm-sans-latin.woff2") format("woff2");
 }
 @font-face {
-  font-family: 'Manrope';
+  font-family: "Manrope";
   font-style: normal;
   font-weight: 400 800;
   font-display: swap;
-  src: url('assets/fonts/manrope-latin.woff2') format('woff2');
+  src: url("assets/fonts/manrope-latin.woff2") format("woff2");
 }
 * {
   box-sizing: border-box;
@@ -22,7 +22,7 @@ body {
   margin: 0;
   padding: 16px;
   background: transparent;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   color: #192031;
   display: grid;
   place-items: center;
@@ -63,7 +63,7 @@ a:focus-visible {
   font-weight: 700;
 }
 h1 {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: clamp(2.3rem, 6vw, 3.5rem);
   line-height: 1.2;
   letter-spacing: -0.06em;
@@ -203,12 +203,4 @@ body {
 }
 .profile-copy {
   max-width: 100%;
-}
-
-.error-card {
-  grid-template-columns: minmax(0, 1fr);
-  min-height: 320px;
-}
-.error-card .profile-copy {
-  padding: 32px;
 }

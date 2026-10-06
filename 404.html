@@ -1,6 +1,7 @@
 ---
 layout: null
 ---
+
 {%- include site-url.html -%}
 <!doctype html>
 <html lang="en">
@@ -26,28 +27,70 @@ layout: null
       type="image/svg+xml"
       sizes="any"
     />
-    <link rel="stylesheet" href="{{ site_root | append: 'embed.css?v=b883042aa4ca' | escape }}" />
+    <meta name="color-scheme" content="light dark" />
+    <link
+      rel="stylesheet"
+      href="{{ site_root | append: 'style.css?v=7633ee75e1b7' | escape }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ site_root | append: '404.css?v=26350b9fbefa' | escape }}"
+    />
   </head>
-  <body>
-    <main class="profile-card error-card">
-      <div class="profile-copy">
-        <span class="eyebrow">404 / PAGE NOT FOUND</span>
-        <h1>Let’s head home<span>.</span></h1>
-        <p>This page isn’t here.</p>
-        <a class="portfolio-link" href="{{ site_root | escape }}"
-          >Visit Sarvesh’s portfolio
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            aria-hidden="true"
+  <body class="not-found">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="error-header wrap">
+      <a
+        class="brand"
+        href="{{ site_root | escape }}"
+        aria-label="Sarvesh — home"
+      >
+        <span class="brand-symbol" aria-hidden="true">S<span>.</span></span>
+        <span>Sarvesh</span>
+      </a>
+      <span class="error-header-note">A small detour.</span>
+    </header>
+    <main class="error-main wrap" id="main">
+      <div class="error-copy">
+        <p class="error-label">404 / PAGE NOT FOUND</p>
+        <h1>This wasn’t part of the <span>workflow.</span></h1>
+        <p class="error-description">
+          That address doesn’t lead to a page. The portfolio is still right
+          where it should be.
+        </p>
+        <div class="error-actions">
+          <a class="button primary" href="{{ site_root | escape }}"
+            >Back to the portfolio
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              aria-hidden="true"
+            >
+              <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+          ></a>
+          <a
+            class="button quiet"
+            href="{{ site_root | append: '#contact' | escape }}"
+            >Get in touch</a
           >
-            <path d="M5 19 19 5M5 5h14v14" /></svg
-        ></a>
+        </div>
+      </div>
+      <div class="error-art" aria-hidden="true">
+        <div class="error-orbit"></div>
+        <span class="error-number">404<span class="error-dot"></span></span>
+        <span class="error-status"><span></span> No page returned</span>
+        <span class="error-art-label">END OF THIS PATH</span>
       </div>
     </main>
+    <footer class="error-footer wrap">
+      <span>Software · Automation · AI</span>
+      <a href="mailto:sarvesh.official@icloud.com"
+        >sarvesh.official@icloud.com</a
+      >
+    </footer>
   </body>
 </html>

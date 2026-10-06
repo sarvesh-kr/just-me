@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PAGE_ASSETS = {
     "index.html": ("app.js", "style.css"),
     "embed.html": ("embed.css",),
-    "404.html": ("embed.css",),
+    "404.html": ("style.css", "404.css"),
 }
 pages = {name: (ROOT / name).read_text(encoding="utf-8") for name in PAGE_ASSETS}
 digests = {
