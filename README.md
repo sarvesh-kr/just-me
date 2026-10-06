@@ -1,6 +1,6 @@
 # Sarvesh — Personal portfolio
 
-Live: https://sarvesh-kr.github.io/just-me/
+Live: https://sarvesh.si/
 
 A static, responsive portfolio with a layered portrait, light and dark themes, a workflow demo, an accessible skills explorer, and reduced-motion support. GitHub Pages builds the URL templates automatically. The browser has no runtime library dependencies.
 
@@ -15,6 +15,10 @@ When updating the page content, update `last_modified_at` in `_config.yml`. Stru
 For another hosting provider, set the full public URL including any subdirectory once in `_config.yml` under `site_url`, and deploy the Jekyll output. Leave `site_url` empty on GitHub Pages so its domain metadata remains authoritative. DNS setup, domain verification and TLS issuance are handled separately by the hosting provider.
 
 Contact: **sarvesh.official@icloud.com**. The phone number, original résumé, and deployment credentials are excluded.
+
+## Custom domain
+
+`CNAME` sets the public domain to `sarvesh.si`. Keep `site_url` empty so GitHub Pages remains the source for generated URLs. At the DNS provider, point the apex (`@`) to all four GitHub Pages IPv4 addresses: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`. To support `www`, add a CNAME from `www` to `sarvesh-kr.github.io` (without a repository path). Preserve unrelated email and verification records. Once DNS resolves and GitHub provisions its certificate, enable **Settings → Pages → Enforce HTTPS**. See [GitHub’s custom-domain instructions](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
 
 ## Security and privacy
 
@@ -32,9 +36,9 @@ If an old preview remains, paste the URL into a new draft and allow time for the
 
 Printing reveals every expertise panel and all sections, including content not yet scrolled into view. The favicon has SVG and PNG versions for browser compatibility.
 
-Submit https://sarvesh-kr.github.io/just-me/sitemap.xml in Google Search Console for the verified property. Search engine verification requires the account owner; indexing, ranking, and social-preview refresh timing cannot be guaranteed. Google’s Rich Results Test may not offer a rich result for every valid schema type.
+Submit https://sarvesh.si/sitemap.xml in Google Search Console for the verified property. Search engine verification requires the account owner; indexing, ranking, and social-preview refresh timing cannot be guaranteed. Google’s Rich Results Test may not offer a rich result for every valid schema type.
 
-A portable `robots.txt` is included. Crawlers normally read robots.txt at the host root (`https://sarvesh-kr.github.io/robots.txt`), so the file under `/just-me/` is not a host-wide crawler policy. The HTML robots directives apply to this portfolio.
+The custom domain serves `robots.txt` at `https://sarvesh.si/robots.txt`, the host-root location crawlers use. Its sitemap URL follows the configured domain automatically. The HTML robots directives also apply to this portfolio.
 
 ## Embed the profile card
 
@@ -44,7 +48,7 @@ The script-free card works without tracking, clipboard permissions, or parent-wi
 
 ```html
 <iframe
-  src="https://sarvesh-kr.github.io/just-me/embed.html"
+  src="https://sarvesh.si/embed.html"
   title="Sarvesh — Software, Automation & AI"
   width="100%"
   height="480"
