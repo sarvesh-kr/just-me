@@ -24,7 +24,11 @@ GitHub Pages does not support arbitrary response-header configuration. Meta CSP 
 
 ## Search and sharing
 
-The page includes a canonical URL, descriptive metadata, ProfilePage/Person/WebSite JSON-LD, a 1200 × 630 Open Graph and Twitter share image, and `sitemap.xml`. Content and navigation remain available with JavaScript disabled or the application script blocked; interactive controls appear after initialization. The embed card and 404 page use `noindex`.
+The page includes a canonical URL, descriptive metadata, ProfilePage/Person/WebSite JSON-LD, a 1200 × 630 Open Graph and Twitter share image, and `sitemap.xml`. The active share-image path is set once in `_config.yml` under `social_image`; its public URL follows the current hosting domain. Content and navigation remain available with JavaScript disabled or the application script blocked; interactive controls appear after initialization. The embed card and 404 page use `noindex`.
+
+WhatsApp and X link previews read the main page's metadata; they do not render `embed.html` or use its CSS. Share the complete HTTPS portfolio URL. The page requests a large-image card, but each app controls the final size, crop, cache lifetime and whether previews are enabled. No site-side change can force a particular WhatsApp Status layout.
+
+If an old preview remains, paste the URL into a new draft and allow time for the preview to load. A fresh query parameter can help test a new request, but does not guarantee that an app will bypass its canonical-URL cache. On WhatsApp, check **Settings → Privacy → Advanced → Disable link previews**; previews require this setting to be off. See [WhatsApp's instructions](https://faq.whatsapp.com/445453537819972/?cms_platform=iphone). Meta's [Sharing Debugger](https://developers.facebook.com/tools/debug/) can inspect and refresh Meta's scrape of the page; it does not guarantee an immediate change in every app.
 
 Printing reveals every expertise panel and all sections, including content not yet scrolled into view. The favicon has SVG and PNG versions for browser compatibility.
 
@@ -55,4 +59,4 @@ For the complete scrolling portfolio, use the main site URL with a descriptive t
 
 ## Assets and licenses
 
-Fonts are self-hosted variable Latin subsets of DM Sans and Manrope; their SIL Open Font Licenses are in `assets/fonts/`. `assets/sarvesh-portrait.webp` preserves portrait transparency and is encoded for quick delivery. `assets/social-preview-v2.png` is a rendered share card. Keep fonts’ license files when redistributing them.
+Fonts are self-hosted variable Latin subsets of DM Sans and Manrope; their SIL Open Font Licenses are in `assets/fonts/`. `assets/sarvesh-portrait.webp` preserves portrait transparency and is encoded for quick delivery. `assets/social-preview-v3.jpg` is the current rendered share card. Keep `assets/social-preview.png` and `assets/social-preview-v2.png`: both serve the current artwork at earlier image URLs so cached link metadata does not lead to missing images. Keep fonts’ license files when redistributing them.
