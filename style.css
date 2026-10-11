@@ -128,6 +128,38 @@ button svg {
   transform-origin: left;
   pointer-events: none;
 }
+.domain-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 4vw, 40px);
+  min-height: 42px;
+  padding: 9px 20px;
+  background: linear-gradient(110deg, #263fd4, #3856ef 50%, #263fd4);
+  color: #fff;
+  text-align: center;
+}
+.domain-strip::before,
+.domain-strip::after {
+  content: '';
+  flex: 0 1 clamp(8px, 6vw, 72px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ddff8080);
+}
+.domain-strip::after {
+  transform: rotate(180deg);
+}
+.domain-strip p {
+  flex: 0 1 auto;
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.035em;
+}
+.domain-strip p span {
+  color: var(--lime);
+}
 .site-header {
   position: sticky;
   top: 0;
